@@ -11,7 +11,7 @@ import (
 func WriteAfterEodCsv(fileName string, afterEodData []models.AfterEod) error {
 
 	//open csv file
-	f, err := os.OpenFile(fileName, os.O_WRONLY, os.ModeType)
+	f, err := os.OpenFile(fileName, os.O_WRONLY|os.O_CREATE, os.ModeType)
 	if err != nil {
 		fmt.Println(err)
 		return err
